@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambia Tama&ntilde;o y Tipo de Letra</title>
+    <script type="text/javascript">
+        function cambiarPixelesLetra(par, pixeles)
+        {
+            parrafo = document.getElementById(par);
+            parrafo.style.fontSize = pixeles;
+        }
+        function cambiarFuente(par, font)
+        {
+            parrafo = document.getElementById(par);
+            parrafo.style.fontFamily = font;
+        }
+        function cambiarBackground(par, color)
+        {
+            contenedor = document.getElementById(par, color);
+            contenedor.style.backgroundColor = color;
+        }
+    </script>
+</head>
+<body>
+    <h2>Cambia Tama&ntilde;o y Tipo de Letra</h2>
+    <div id="contenedor">
+        <p id="p1">Da click en los botones de abajo para
+        cambiar el tama&ntilde;o y tipo de letra
+        del texto de este p&aacute;rrafo. Los
+        primeros 2 botones cambian el tama&ntilde;o
+        del texto, y los últimos 2 botones cambian
+        el tipo de letra del texto.</p>
+    </div>
+    <br />
+    
+        <input type="button" value="20px"
+            onclick="cambiarPixelesLetra('p1', '20px');" />
+        <input type="button" value="25px"
+            onclick="cambiarPixelesLetra('p1', '25px');" />
+        <input type="button" value="Arial"
+            onclick="cambiarFuente('p1', 'Arial');" />
+        <input type="button" value="Verdana"
+            onclick="cambiarFuente('p1', 'Verdana');" />
+        <input type="button" value="Cambir fondo a Naranja" 
+            onclick="cambiarBackground('contenedor', 'orange')"; />
+        <input type="button" value="Cambir fondo a Purpura" 
+            onclick="cambiarBackground('contenedor', 'purple')"; />
+
+</body>
+</html>

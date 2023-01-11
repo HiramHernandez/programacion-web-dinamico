@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Campos de Texto y Botones</title>
+    <script type="text/javascript">
+        function generarCajas(div, num)
+        {
+            panel = document.getElementById(div);
+            cajaTexto = document.getElementById(num);
+            numCajas = cajaTexto.value;
+            for(i = 0; i<numCajas; i++){
+                nuevaCaja = document.createElement("input");
+                nuevaCaja.setAttribute("type", "text");
+                br = document.createElement("br");
+                nuevoBoton = document.createElement("button")
+                nuevoBoton.setAttribute("type", "button")
+                nuevoBoton.setAttribute("text", "hola")
+                panel.appendChild(nuevaCaja);
+                panel.appendChild(nuevoBoton);
+                panel.appendChild(br);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Generador de Campos de Texto</h2>
+    <p>Escribe el n&uacute;mero de campos de texto que
+    deseas generar din&aacute;micamente:</p>
+    <input type="text" id="cajaTexto" />
+    <input type="button" value="Generar Cajas y Botones"
+    onclick="generarCajas('panel', 'cajaTexto');" />
+    <br /><br />
+    <div id="panel"></div>
+</body>
+</html>
