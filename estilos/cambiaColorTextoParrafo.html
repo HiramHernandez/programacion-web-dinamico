@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambia Estilos de Elementos HTML</title>
+    <script type="text/javascript">
+        function cambiaTextoColor(par, color){
+            parrafo = document.getElementById(par);
+            parrafo.style.color =  color;
+        }
+    </script>
+</head>
+<body>
+    <h2>Cambia Estilos de Elementos HTML</h2>
+    <p id="p1">Da click en los botones de abajo para
+    cambiar el color del texto de este p&aacute;rrafo.
+    El bot&oacute;n con el texto Azul cambiar&aacute;
+    el color del texto a azul; y el bot&oacute;n con
+    el texto Rojo lo cambiar&aacute; a rojo.</p>
+    <br />
+    <input type="button" value="Azul" onclick="cambiaTextoColor('p1', 'blue');" />
+    <input type="button" value="Rojo" onclick="cambiaTextoColor('p1', 'red');" />
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creaci&oacute;n de Elementos HTML</title>
+    <script type="text/javascript">
+        function crearParrafo(div, caja)
+        {
+            panel = document.getElementById(div);
+            cajaTexto = document.getElementById(caja);
+            textoParrafo = document.getElementById(caja);
+            textoParrafo = cajaTexto.value;
+            nuevoParrafo = document.createElement("p");
+            nodoTexto = document.createTextNode(textoParrafo);
+            nuevoParrafo.appendChild(nodoTexto);
+            panel.appendChild(nuevoParrafo)         
+        }
+    </script>
+</head>
+<body>
+    <h2>Creaci&oacute;n de Elementos HTML</h2>
+    <p>Escribe el texto para el nuevo p&aacute;rrafo y da click el bot&oacute;n para crearlo:</p>
+    <input type="text" id="cajaTexto" />
+    <input type="button" value="Crea P&aacute;rrafo"
+    onclick="crearParrafo('panel', 'cajaTexto');" />
+    <br /><br />
+    <div id="panel">
+        <p>Este es el p&aacute;rrafo 1.</p>
+        <p>Este es el p&aacute;rrafo 2.</p>
+    </div> 
+</body>
+</html>
