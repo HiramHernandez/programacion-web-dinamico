@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicks sobre elementos parrafos</title>
+</head>
+<body>
+    <p onclick="Click('parrafo-1')" id="parrafo-1">Párrafo 1</p>
+    <p onclick="Click('parrafo-2')" id="parrafo-2">Párrafo 2</p>
+    <p onclick="Click('parrafo-3')" id="parrafo-3">Párrafo 3</p>
+    <hr>
+    <p id="parrafo-resultados">Texto Original</p>
+    <script type="text/javascript">
+        function Click(elementId){
+            texto = document.getElementById(elementId);
+            parrafoResultados = document.getElementById("parrafo-resultados")
+            let message = `<br>${texto.innerHTML} <br>`
+            parrafoResultados.innerHTML += message;
+        }
+    </script>
+</body>
+</html>
