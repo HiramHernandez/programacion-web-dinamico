@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encontrando Objetos por Nombre de Etiqueta</title>
+</head>
+<body>
+    <h2>Cursos de Tecnolog&iacute;as y Sistemas de Informaci&oacute;n</h2>
+    <p>Programaci&oacute;n de Web Din&aacute;mico</p>
+    <p>Bases de Datos</p>
+    <p>Integraci&oacute;n de Sistemas</p>
+    <h2>Cursos encontrados</h2>
+    <p id="texto"></p>
+    <script type="text/javascript">
+        parrafos = document.getElementsByTagName("p");
+        miTexto = document.getElementById("texto");
+        miTexto.innerHTML = = "Los 2 primeros cursos son:" +
+            "<br />" + parrafos[0].innerHTML +
+            "<br />" + parrafos[1].innerHTML;
+    </script>
+</body>
+</html>

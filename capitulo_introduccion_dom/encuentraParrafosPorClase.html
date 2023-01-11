@@ -1,0 +1,22 @@
+<html>
+ <head>
+ <title>Encontrando Objetos por Nombre de Clase</title>
+ <body>
+ <h2>Cursos de Computaci&oacute;n</h2>
+ <p class="java">Fundamentos de Java</p>
+ <p class="sql">Fundamentos de MySQL</p>
+ <p class="java">Uso de Java Beans</p>
+ <p class="sql">Manejo de Usuarios en MySQL</p>
+ <p class="java">Java Server Pages</p>
+ <h2>Cursos encontrados de la clase java</h2>
+ <p id="texto"></p>
+ <script type="text/javascript">
+ cursos = document.getElementsByClassName("java");
+ miTexto = document.getElementById("texto");
+ miTexto.innerHTML = "Los cursos de Java son:" +
+ "<br />" + cursos[0].innerHTML +
+ "<br />" + cursos[1].innerHTML +
+ "<br />" + cursos[2].innerHTML;
+ </script>
+ </body>
+</html>

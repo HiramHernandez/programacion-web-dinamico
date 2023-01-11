@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encontrando Objetos por Identificador</title>
+</head>
+<body>
+    <p id="curso">Web Din&aacute;mico</p>
+    <p>
+        En este ejemplo se encuentran objetos por su
+        identificador, utilizando el m&eacute;todo
+        <b>getElementById()</b> del objeto document.
+    </p>
+    <p id="texto"></p>
+    <script type="text/javascript">
+        miCurso = document.getElementById("curso");
+        miTexto = document.getElementById("texto")
+        miTexto.innerHTML = "Este ejemplo es para el curso" + miCurso.innerHTML;
+    </script>
+</body>
+</html>
