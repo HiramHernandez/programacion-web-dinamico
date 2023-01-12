@@ -1,0 +1,7 @@
+https://handsonreact.com/docs/labs/react-tutorial-typescript
+
+https://github.com/stevenhansel/react-pokedex
+
+https://medium.com/@islamnaderawad/learn-how-to-build-crud-app-using-flask-mysql-and-javascript-f9f940916362
+
+https://pokedex.stevenhansel.com/pokemons/21
