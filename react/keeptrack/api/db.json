@@ -970,5 +970,32 @@
       "budget": 81317,
       "isActive": false
     }
+  ],
+  "menu":[
+    {
+      "id": 1,
+      "title": "buy-cart",
+      "icon": ".icon-cart",
+      "route": "/buy-cart"
+    },
+    {
+      "id": 2,
+      "title": "Custormers",
+      "icon": ".icon-user"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "123",
+      "menus": [1, 2]
+    },
+    {
+      "id": 2,
+      "username": "test",
+      "password": "test",
+      "menus": [2]
+    }
   ]
 }

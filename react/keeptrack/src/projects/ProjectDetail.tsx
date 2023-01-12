@@ -10,11 +10,14 @@ export default function ProjectDetail({ project }: ProjectDetailProps) {
     <div className="row">
         <div className='col-sm-6'>
             <div className='card large'>
-                <img
-                    className='rounded'
-                    src={project.imageUrl}
-                    alt={project.name}
-                />
+                <figure>
+                    <img
+                        className='rounded'
+                        src={project.imageUrl}
+                        alt={project.name}
+                    />
+                    <figcaption>{project.name}</figcaption>
+                </figure>
                 <section className='section dark'>
                     <h3 className='strong'>
                         <strong>{project.name}</strong>
