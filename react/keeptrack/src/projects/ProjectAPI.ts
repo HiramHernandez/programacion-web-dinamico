@@ -1,7 +1,10 @@
+import parseJson from "parse-json";
+import { User } from "../models/user.model";
 import { Project } from "./Project";
 const baseUrl: string = "http://localhost";
 const port: string = "4000";
 const url: string = `${baseUrl}:${port}/projects`;
+const urlUsers: string = `${baseUrl}:${port}/users/`;
 
 function translateStatusToErrorMessage(status: number)
 {
@@ -90,3 +93,18 @@ const projectAPI = {
 };
 
 export { projectAPI };
+
+const ApiUser = {
+  get(){
+    return fetch(urlUsers)
+        .then(checkStatus)
+        .catch((error: TypeError) => {
+            console.log('log client error ' + error);
+            throw new Error(
+                'There was an error retrieving the projects. Please try again.'
+            );
+        })
+  }
+}
+
+export { ApiUser };
