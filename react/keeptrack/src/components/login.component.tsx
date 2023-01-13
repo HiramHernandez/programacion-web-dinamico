@@ -18,32 +18,18 @@ export default function LoginComponent() {
 
   const handleSubmit = (event: SyntheticEvent) => {
     console.log(username, password);
-    /*
-     console.log(data.json());
-        for(let i: number = 0; i = data.length -1; i++)
-        {
-          console.log(`Indice: ${i}`);
-          console.log(data[i].id);
-          console.log(data[i].username);
-          console.log(data[i].password);
-          console.log("######")
-        }
-    */
     if(!validateForm()) return;
-    ApiUser
-      .get()
-      .then((data) => {
-        let resp = data.json();
-        console.log("HOLA!!!!!!!!!");
-        for(let i: number; i = resp.length -1; i++){
-          console.log(i);
-          console.log(resp[i].username, resp[i].password);
-        }
-        console.log('Adios');
-      })
-      .catch((err) => {
-        console.log(`Ocurrio un error ${err}`);
+    let loginValid: boolean = false;
+    ApiUser.get_async()
+      .then()
+      .then(users => {
+
+        users.map((user: any) => {
+          console.log(user)
+          
+        })
       });
+    console.log(loginValid);
     event.preventDefault();
   }
 

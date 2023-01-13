@@ -104,7 +104,20 @@ const ApiUser = {
                 'There was an error retrieving the projects. Please try again.'
             );
         })
+  },
+  async get_async(){
+    console.log(urlUsers);
+    const res = await fetch(urlUsers);
+    const data = await res.json();
+    return data;
   }
 }
 
 export { ApiUser };
+
+export default async function get_async() {
+    const res = await fetch(urlUsers);
+    const data = await res.json();
+    return data.results;
+}
+
