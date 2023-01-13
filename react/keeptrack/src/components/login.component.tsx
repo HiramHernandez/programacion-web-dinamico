@@ -1,7 +1,7 @@
-import { element } from 'prop-types';
 import React, { useState, SyntheticEvent, useEffect } from 'react';
 import { User } from '../models/user.model';
-import { ApiUser } from '../projects/ProjectAPI';
+import { Usuario } from '../types/usuario.type';
+import useFetch from '../hooks/useFetch.hook';
 
 interface LoginProps{
   user: User;
@@ -12,6 +12,11 @@ export default function LoginComponent() {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [users, setUsers] = useState<User[]>([]);
+  
+  
+  const [responses, isError, isLoading] = useFetch<User>('http://localhost:4000/users');
+    
   function validateForm(): boolean{
     return username.length > 0 && password.length > 0;
   }
@@ -19,17 +24,10 @@ export default function LoginComponent() {
   const handleSubmit = (event: SyntheticEvent) => {
     console.log(username, password);
     if(!validateForm()) return;
-    let loginValid: boolean = false;
-    ApiUser.get_async()
-      .then()
-      .then(users => {
+    console.log(responses);
+    const existsUser = responses?.filter(resp => resp.username === username && resp.password === password);
 
-        users.map((user: any) => {
-          console.log(user)
-          
-        })
-      });
-    console.log(loginValid);
+    console.log(existsUser);
     event.preventDefault();
   }
 
