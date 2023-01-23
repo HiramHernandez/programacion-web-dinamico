@@ -997,5 +997,19 @@
       "password": "test",
       "menus": [2]
     }
+  ],
+  "usuarios":[
+    {
+      "name": "Carolina",
+      "age": 2
+    },
+    {
+      "name": "Axel",
+      "age": 6
+    },
+    {
+      "name": "Sofia",
+      "age": 8
+    }
   ]
 }

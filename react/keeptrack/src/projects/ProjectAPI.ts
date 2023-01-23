@@ -1,7 +1,10 @@
+import parseJson from "parse-json";
+import { User } from "../models/user.model";
 import { Project } from "./Project";
 const baseUrl: string = "http://localhost";
 const port: string = "4000";
 const url: string = `${baseUrl}:${port}/projects`;
+const urlUsers: string = `${baseUrl}:${port}/users/`;
 
 function translateStatusToErrorMessage(status: number)
 {
@@ -90,3 +93,67 @@ const projectAPI = {
 };
 
 export { projectAPI };
+
+const ApiUser = {
+  get(){
+    return fetch(urlUsers)
+        .then(checkStatus)
+        .catch((error: TypeError) => {
+            console.log('log client error ' + error);
+            throw new Error(
+                'There was an error retrieving the projects. Please try again.'
+            );
+        })
+  },
+  get_users(){
+    fetch(urlUsers)
+      .then((res) => res.json())
+      .then((data) => {return data; })
+      .catch((error) => console.log(error))
+      .finally(() => console.log('done'));
+  }
+}
+
+export { ApiUser };
+
+export default async function get_async() {
+    const res = await fetch(urlUsers);
+    const data = await res.json();
+    return data;
+}
+
+/*
+async function get_async(){
+  const response = fetch(urlUsers);
+  console.log(response);
+  const data = response.json();
+  console.log(data);
+  return data;
+
+}
+*/
+
+const getJSON = <T>(config: { url: string}): Promise<T> => {
+  const fetchConfig = ({ method: 'GET'});
+  return fetch(config.url, fetchConfig)
+    .then<T>(response => response.json());
+}
+
+type UserType = {
+  id: number;
+  username: string;
+  password: string;
+  menus: number[];
+}
+
+type LoadUserResponse = {
+  users: UserType[];
+  [key: number]: UserType;
+}
+
+export function loadUsers(){
+  const users = getJSON<UserType>({url: urlUsers})
+    .then((res: UserType) => {
+      
+    });
+}

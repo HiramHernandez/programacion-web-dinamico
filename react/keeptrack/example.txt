@@ -1,0 +1,3 @@
+https://www.bezkoder.com/react-typescript-login-example/
+
+https://medium.com/bb-tutorials-and-thoughts/how-to-make-api-calls-in-react-applications-typescript-version-1800fc756966
